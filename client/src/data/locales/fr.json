@@ -1,0 +1,106 @@
+{
+  "app": {
+    "title": "Al-Kitab Al-Mubeen",
+    "description": "Votre encyclopédie islamique complète - Coran, Biographie prophétique, Invocations et Heures de prière"
+  },
+  "nav": {
+    "home": "Accueil",
+    "quran": "Saint Coran",
+    "seerah": "Biographie Prophétique",
+    "prayer_guide": "Guide de Prière",
+    "daily_reminders": "Rappels Quotidiens",
+    "ai_assistant": "Assistant IA",
+    "five_pillars": "Cinq Piliers",
+    "women_islam": "Femmes en Islam",
+    "children": "Section Enfants"
+  },
+  "prayer": {
+    "times_title": "Heures de Prière",
+    "current": "Prière Actuelle",
+    "remaining": "Temps Restant",
+    "enable_notifications": "Activer les Notifications",
+    "riyadh": "Riyad",
+    "fajr": "Fajr",
+    "sunrise": "Lever du Soleil",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "quran": {
+    "verse_of_day": "Verset du Jour",
+    "tafsir": "Interprétation",
+    "search_placeholder": "Rechercher dans le Saint Coran...",
+    "surah": "Chapitre",
+    "verse": "Verset"
+  },
+  "seerah": {
+    "title": "La Noble Biographie Prophétique",
+    "description": "Apprenez sur la vie du Prophète Muhammad ﷺ et les étapes importantes de son voyage béni",
+    "early_life": "Jeunesse et Enfance",
+    "prophethood": "Prophétie et Mission",
+    "migration": "Migration et Lutte",
+    "final_years": "Dernières Années"
+  },
+  "azkar": {
+    "digital_tasbih": "Tasbih Numérique",
+    "morning": "Invocations du Matin",
+    "evening": "Invocations du Soir",
+    "progress": "Progrès",
+    "completed": "Félicitations! Complété 100",
+    "completed_message": "Vous avez terminé avec succès les invocations 🤲"
+  },
+  "actions": {
+    "save": "Sauvegarder",
+    "share": "Partager",
+    "explore_now": "Explorer Maintenant",
+    "read_more": "Lire Plus",
+    "start_learning": "Commencer l'Apprentissage",
+    "ask_now": "Demander Maintenant",
+    "reset": "Réinitialiser",
+    "continue_session": "Continuer la Dernière Session"
+  },
+  "features": {
+    "quran_tafsir": {
+      "title": "Saint Coran et Interprétation",
+      "description": "Le Noble Coran avec des interprétations authentiques d'Ibn Kathir, Al-Qurtubi et As-Sa'di"
+    },
+    "seerah": {
+      "title": "La Noble Biographie Prophétique",
+      "description": "Un voyage complet à travers la vie du Prophète Muhammad ﷺ avec des étapes clés et des leçons"
+    },
+    "prayer_guide": {
+      "title": "Guide de Prière Complet",
+      "description": "Apprenez la prière étape par étape avec les règles, les étiquettes et les supplications"
+    },
+    "ai_assistant": {
+      "title": "Assistant Islamique Intelligent",
+      "description": "Obtenez des réponses précises à vos questions islamiques de sources fiables"
+    },
+    "islamic_calendar": {
+      "title": "Calendrier Islamique",
+      "description": "Suivez les dates et occasions islamiques importantes avec des rappels"
+    },
+    "children_section": {
+      "title": "Section Enfants",
+      "description": "Histoires et jeux éducatifs islamiques pour que les enfants apprennent les valeurs et les étiquettes"
+    }
+  },
+  "welcome": {
+    "title": "Votre Passerelle vers une Connaissance Islamique Complète",
+    "subtitle": "Découvrez les trésors du patrimoine islamique à travers une plateforme complète combinant le Saint Coran et des interprétations authentiques",
+    "start_journey": "Commencer le Voyage",
+    "browse_content": "Parcourir le Contenu"
+  },
+  "footer": {
+    "quick_links": "Liens Rapides",
+    "support": "Support",
+    "help_center": "Centre d'Aide",
+    "faq": "FAQ",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "download_app": "Télécharger l'App",
+    "contact_us": "Nous Contacter",
+    "copyright": "© 2024 Al-Kitab Al-Mubeen. Tous droits réservés."
+  }
+}

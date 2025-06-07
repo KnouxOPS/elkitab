@@ -1,0 +1,106 @@
+{
+  "app": {
+    "title": "Al-Kitab Al-Mubeen",
+    "description": "Your comprehensive Islamic encyclopedia - Quran, Prophetic Biography, Remembrances, and Prayer Times"
+  },
+  "nav": {
+    "home": "Home",
+    "quran": "Holy Quran",
+    "seerah": "Prophetic Biography",
+    "prayer_guide": "Prayer Guide",
+    "daily_reminders": "Daily Reminders",
+    "ai_assistant": "AI Assistant",
+    "five_pillars": "Five Pillars",
+    "women_islam": "Women in Islam",
+    "children": "Children's Section"
+  },
+  "prayer": {
+    "times_title": "Prayer Times",
+    "current": "Current Prayer",
+    "remaining": "Time Remaining",
+    "enable_notifications": "Enable Notifications",
+    "riyadh": "Riyadh",
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "quran": {
+    "verse_of_day": "Verse of the Day",
+    "tafsir": "Interpretation",
+    "search_placeholder": "Search in the Holy Quran...",
+    "surah": "Chapter",
+    "verse": "Verse"
+  },
+  "seerah": {
+    "title": "The Noble Prophetic Biography",
+    "description": "Learn about the life of Prophet Muhammad ﷺ and important milestones in his blessed journey",
+    "early_life": "Early Life and Childhood",
+    "prophethood": "Prophethood and Mission",
+    "migration": "Migration and Struggle",
+    "final_years": "Final Years"
+  },
+  "azkar": {
+    "digital_tasbih": "Digital Tasbih",
+    "morning": "Morning Remembrances",
+    "evening": "Evening Remembrances",
+    "progress": "Progress",
+    "completed": "Congratulations! Completed 100",
+    "completed_message": "You have successfully completed the remembrances 🤲"
+  },
+  "actions": {
+    "save": "Save",
+    "share": "Share",
+    "explore_now": "Explore Now",
+    "read_more": "Read More",
+    "start_learning": "Start Learning",
+    "ask_now": "Ask Now",
+    "reset": "Reset",
+    "continue_session": "Continue Last Session"
+  },
+  "features": {
+    "quran_tafsir": {
+      "title": "Holy Quran and Interpretation",
+      "description": "The Noble Quran with authentic interpretations from Ibn Kathir, Al-Qurtubi, and As-Sa'di"
+    },
+    "seerah": {
+      "title": "The Noble Prophetic Biography",
+      "description": "A comprehensive journey through the life of Prophet Muhammad ﷺ with key milestones and lessons"
+    },
+    "prayer_guide": {
+      "title": "Comprehensive Prayer Guide",
+      "description": "Learn prayer step by step with rulings, etiquettes, and supplications"
+    },
+    "ai_assistant": {
+      "title": "Smart Islamic Assistant",
+      "description": "Get accurate answers to your Islamic questions from trusted sources"
+    },
+    "islamic_calendar": {
+      "title": "Islamic Calendar",
+      "description": "Follow important Islamic dates and occasions with reminders"
+    },
+    "children_section": {
+      "title": "Children's Section",
+      "description": "Islamic educational stories and games for children to learn values and etiquettes"
+    }
+  },
+  "welcome": {
+    "title": "Your Gateway to Comprehensive Islamic Knowledge",
+    "subtitle": "Discover the treasures of Islamic heritage through a comprehensive platform combining the Holy Quran and authentic interpretations",
+    "start_journey": "Start Journey",
+    "browse_content": "Browse Content"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "support": "Support",
+    "help_center": "Help Center",
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "download_app": "Download App",
+    "contact_us": "Contact Us",
+    "copyright": "© 2024 Al-Kitab Al-Mubeen. All rights reserved."
+  }
+}
