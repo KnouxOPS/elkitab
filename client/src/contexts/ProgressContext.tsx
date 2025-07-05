@@ -76,6 +76,14 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }));
   };
 
+  const toggleBookmark = (contentId: string) => {
+    if (progress.bookmarks.includes(contentId)) {
+      removeBookmark(contentId);
+    } else {
+      addBookmark(contentId);
+    }
+  };
+
   const updateReadingProgress = (contentId: string, progressValue: number) => {
     setProgress((prev) => ({
       ...prev,
