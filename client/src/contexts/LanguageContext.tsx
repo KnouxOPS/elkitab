@@ -179,6 +179,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   });
 
   const direction = language === "ar" || language === "ur" ? "rtl" : "ltr";
+  const isRTL = direction === "rtl";
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
