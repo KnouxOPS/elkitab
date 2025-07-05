@@ -121,7 +121,20 @@ export const insertUserProgressSchema = createInsertSchema(userProgress).omit({
   updatedAt: true,
 });
 
+export const insertProgressSchema = createInsertSchema(progress).omit({
+  id: true,
+  createdAt: true,
+  lastAccessed: true,
+});
+
 export const insertPrayerTimesSchema = createInsertSchema(prayerTimes).omit({
+  id: true,
+  updatedAt: true,
+});
+
+export const insertPrayerSettingsSchema = createInsertSchema(
+  prayerSettings,
+).omit({
   id: true,
   updatedAt: true,
 });
