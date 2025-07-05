@@ -1,4 +1,12 @@
-import { pgTable, text, serial, integer, boolean, timestamp, jsonb } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  text,
+  serial,
+  integer,
+  boolean,
+  timestamp,
+  jsonb,
+} from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -14,7 +22,9 @@ export const users = pgTable("users", {
 
 export const userProgress = pgTable("user_progress", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").references(() => users.id).notNull(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
   lastVisitedPage: text("last_visited_page").default("/"),
   completedLessons: jsonb("completed_lessons").default([]),
   currentStreak: integer("current_streak").default(0),
@@ -26,7 +36,9 @@ export const userProgress = pgTable("user_progress", {
 
 export const prayerTimes = pgTable("prayer_times", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").references(() => users.id).notNull(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
   location: text("location").notNull(),
   latitude: text("latitude").notNull(),
   longitude: text("longitude").notNull(),
@@ -35,9 +47,41 @@ export const prayerTimes = pgTable("prayer_times", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
+export const progress = pgTable("progress", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
+  contentType: text("content_type").notNull(), // "verse", "hadith", "seerah", "knowledge"
+  contentId: text("content_id").notNull(),
+  progressPercentage: integer("progress_percentage").default(0),
+  completed: boolean("completed").default(false),
+  timeSpent: integer("time_spent").default(0), // in minutes
+  lastAccessed: timestamp("last_accessed").defaultNow(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const prayerSettings = pgTable("prayer_settings", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
+  location: text("location").notNull(),
+  latitude: text("latitude").notNull(),
+  longitude: text("longitude").notNull(),
+  timezone: text("timezone").notNull(),
+  notificationsEnabled: boolean("notifications_enabled").default(true),
+  reminderMinutes: integer("reminder_minutes").default(10),
+  calculationMethod: text("calculation_method").default("MWL"), // Muslim World League
+  madhab: text("madhab").default("Shafi"), // Hanafi, Shafi, Maliki, Hanbali
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 export const bookmarks = pgTable("bookmarks", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").references(() => users.id).notNull(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
   contentType: text("content_type").notNull(), // "verse", "hadith", "seerah", "knowledge"
   contentId: text("content_id").notNull(),
   title: text("title").notNull(),
@@ -58,7 +102,9 @@ export const islamicContent = pgTable("islamic_content", {
 
 export const chatSessions = pgTable("chat_sessions", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").references(() => users.id).notNull(),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
   messages: jsonb("messages").default([]),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
@@ -85,7 +131,9 @@ export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({
   createdAt: true,
 });
 
-export const insertIslamicContentSchema = createInsertSchema(islamicContent).omit({
+export const insertIslamicContentSchema = createInsertSchema(
+  islamicContent,
+).omit({
   id: true,
   createdAt: true,
 });
