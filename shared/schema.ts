@@ -164,8 +164,14 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type UserProgress = typeof userProgress.$inferSelect;
 export type InsertUserProgress = z.infer<typeof insertUserProgressSchema>;
 
+export type Progress = typeof progress.$inferSelect;
+export type InsertProgress = z.infer<typeof insertProgressSchema>;
+
 export type PrayerTimes = typeof prayerTimes.$inferSelect;
 export type InsertPrayerTimes = z.infer<typeof insertPrayerTimesSchema>;
+
+export type PrayerSettings = typeof prayerSettings.$inferSelect;
+export type InsertPrayerSettings = z.infer<typeof insertPrayerSettingsSchema>;
 
 export type Bookmark = typeof bookmarks.$inferSelect;
 export type InsertBookmark = z.infer<typeof insertBookmarkSchema>;
