@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface ProgressData {
   lastVisitedPage: string;
@@ -17,9 +23,13 @@ interface ProgressContextType {
   removeBookmark: (contentId: string) => void;
   updateReadingProgress: (contentId: string, progress: number) => void;
   getResumeSession: () => { page: string; title: string } | null;
+  bookmarks: string[];
+  toggleBookmark: (contentId: string) => void;
 }
 
-const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
+const ProgressContext = createContext<ProgressContextType | undefined>(
+  undefined,
+);
 
 const initialProgress: ProgressData = {
   lastVisitedPage: "/",
@@ -41,11 +51,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, [progress]);
 
   const updateLastVisited = (page: string) => {
-    setProgress(prev => ({ ...prev, lastVisitedPage: page }));
+    setProgress((prev) => ({ ...prev, lastVisitedPage: page }));
   };
 
   const completeLesson = (lessonId: string) => {
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
       completedLessons: [...new Set([...prev.completedLessons, lessonId])],
       totalPoints: prev.totalPoints + 10,
@@ -53,21 +63,21 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   };
 
   const addBookmark = (contentId: string) => {
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
       bookmarks: [...new Set([...prev.bookmarks, contentId])],
     }));
   };
 
   const removeBookmark = (contentId: string) => {
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
-      bookmarks: prev.bookmarks.filter(id => id !== contentId),
+      bookmarks: prev.bookmarks.filter((id) => id !== contentId),
     }));
   };
 
   const updateReadingProgress = (contentId: string, progressValue: number) => {
-    setProgress(prev => ({
+    setProgress((prev) => ({
       ...prev,
       readingProgress: {
         ...prev.readingProgress,
@@ -78,7 +88,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
 
   const getResumeSession = () => {
     if (progress.lastVisitedPage === "/") return null;
-    
+
     const pageNames: Record<string, string> = {
       "/quran": "القرآن الكريم",
       "/seerah": "السيرة النبوية",
