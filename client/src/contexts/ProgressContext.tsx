@@ -57,7 +57,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const completeLesson = (lessonId: string) => {
     setProgress((prev) => ({
       ...prev,
-      completedLessons: [...new Set([...prev.completedLessons, lessonId])],
+      completedLessons: Array.from(
+        new Set([...prev.completedLessons, lessonId]),
+      ),
       totalPoints: prev.totalPoints + 10,
     }));
   };
@@ -65,7 +67,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   const addBookmark = (contentId: string) => {
     setProgress((prev) => ({
       ...prev,
-      bookmarks: [...new Set([...prev.bookmarks, contentId])],
+      bookmarks: Array.from(new Set([...prev.bookmarks, contentId])),
     }));
   };
 
