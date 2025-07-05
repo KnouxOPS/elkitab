@@ -126,6 +126,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         removeBookmark,
         updateReadingProgress,
         getResumeSession,
+        bookmarks: progress.bookmarks,
+        toggleBookmark,
       }}
     >
       {children}
