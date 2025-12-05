@@ -5,32 +5,37 @@ interface GeminiResponse {
 
 class GeminiService {
   private apiKey: string;
-  private baseUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
+  private baseUrl =
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
 
   constructor() {
     // In production, this should come from a backend proxy
-    this.apiKey = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY || "";
-    
+    this.apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+
     if (!this.apiKey) {
       console.warn("Gemini API key not found. AI features will be limited.");
     }
   }
 
-  async askQuestion(question: string, context = "Islamic"): Promise<GeminiResponse> {
+  async askQuestion(
+    question: string,
+    context = "Islamic",
+  ): Promise<GeminiResponse> {
     if (!this.apiKey) {
       return {
-        response: "عذراً، خدمة المساعد الذكي غير متوفرة حالياً. يرجى المحاولة لاحقاً.",
-        error: "API key not configured"
+        response:
+          "عذراً، خدمة المساعد الذكي غير متوفرة حالياً. يرجى المحاولة لاحقاً.",
+        error: "API key not configured",
       };
     }
 
     try {
       const prompt = `
-        أنت مساعد إسلامي ذكي متخصص في الإجابة على الأسئلة الإسلامية بناءً على القرآن الكريم والسنة النبوية الشريفة.
+        أنت مساعد إسلامي ذكي متخصص في الإجابة ع��ى الأسئلة الإسلامية بناءً على القرآن الكريم والسنة النبوية الشريفة.
         يرجى الإجابة باللغة العربية بطريقة واضحة ومفهومة، مع ذكر المصادر عند الإمكان.
-        
+
         السؤال: ${question}
-        
+
         يرجى تقديم إجابة دقيقة وموثوقة.
       `;
 
@@ -40,11 +45,15 @@ class GeminiService {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          contents: [{
-            parts: [{
-              text: prompt
-            }]
-          }],
+          contents: [
+            {
+              parts: [
+                {
+                  text: prompt,
+                },
+              ],
+            },
+          ],
           generationConfig: {
             temperature: 0.7,
             topK: 40,
@@ -54,21 +63,21 @@ class GeminiService {
           safetySettings: [
             {
               category: "HARM_CATEGORY_HARASSMENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
             },
             {
-              category: "HARM_CATEGORY_HATE_SPEECH", 
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              category: "HARM_CATEGORY_HATE_SPEECH",
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
             },
             {
               category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
             },
             {
               category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
-            }
-          ]
+              threshold: "BLOCK_MEDIUM_AND_ABOVE",
+            },
+          ],
         }),
       });
 
@@ -77,10 +86,10 @@ class GeminiService {
       }
 
       const data = await response.json();
-      
+
       if (data.candidates && data.candidates[0]?.content?.parts[0]?.text) {
         return {
-          response: data.candidates[0].content.parts[0].text
+          response: data.candidates[0].content.parts[0].text,
         };
       } else {
         throw new Error("Invalid response format from Gemini API");
@@ -89,7 +98,7 @@ class GeminiService {
       console.error("Error calling Gemini API:", error);
       return {
         response: "عذراً، حدث خطأ أثناء معالجة سؤالك. يرجى المحاولة مرة أخرى.",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       };
     }
   }
@@ -100,7 +109,7 @@ class GeminiService {
   }
 
   async generateSeerahContent(topic: string): Promise<GeminiResponse> {
-    const question = `أخبرني عن ${topic} في السيرة النبوية الشريفة بشكل مفصل ومناسب للمسلمين.`;
+    const question = `أخبرني عن ${topic} في السير�� النبوية الشريفة بشكل مفصل ومناسب للمسلمين.`;
     return this.askQuestion(question, "Seerah");
   }
 }
